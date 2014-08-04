@@ -1,0 +1,27 @@
+/* Reveal Picker */
+#picker-modal{
+	position:fixed;
+	z-index: 100;
+	width: 500px;
+	height: 120px;	
+	top:50%;
+	left:50%;
+	margin:-60px auto auto -250px;
+	background-color:rgba(255,255,255,0.7);
+	border:solid 1px #000;
+	border-radius:10px;
+	text-align:center;
+	font-family:helvetica, arial, sans-serif;
+
+
+	.picker-cont{				
+		margin:40px auto;
+		font-family:helvetica, arial, sans-serif;
+
+		.select2-result{
+			font-family:helvetica, arial, sans-serif;			
+		}
+	}	
+}
+
+@import "select2"

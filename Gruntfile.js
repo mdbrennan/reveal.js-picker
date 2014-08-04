@@ -20,50 +20,52 @@ module.exports = function(grunt) {
 		// Concat definitions
 		concat: {
 			dist: {
-				src: ["src/reveal.js.picker.js"],
-				dest: "dist/reveal.js.picker.js"
-			},
-			options: {
-				banner: "<%= meta.banner %>"
-			}
-		},
-
-		// Lint definitions
-		jshint: {
-			files: ["src/jquery.boilerplate.js"],
-			options: {
-				jshintrc: ".jshintrc"
-			}
-		},
-
-		// Minify definitions
-		uglify: {
-			my_target: {
-				src: ["dist/reveal.js.picker.js"],
-				dest: "dist/reveal.js.picker.min.js"
+				src: ["src/js/*.js"],
+				dest: "dist/js/reveal.js.picker.js"
 			},
 			options: {
 				banner: "<%= meta.banner %>"
 			}
 		},
 		
+		compass: {                  // Task
+		    dist: {                   // Target
+		      options: {              // Target options
+		        sassDir: 'src/css',
+		        cssDir: 'dist/css',
+		        environment: 'production',
+		        outputStyle:'compressed',
+		        imagesDir:'src/images/',
+		      }
+		    }		    
+		  },
+
+		// Minify definitions
+		uglify: {
+			my_target: {
+				src: ["dist/js/reveal.js.picker.js"],
+				dest: "dist/js/reveal.js.picker.min.js"
+			},
+			options: {
+				banner: "<%= meta.banner %>"
+			}
+		},		
 		
 		// watch for changes to source 
 		// Better than calling grunt a million times 
 		// (call 'grunt watch')
 		watch: {
-		    files: ['src/*'],
+		    files: ['src/**/*'],
 		    tasks: ['default']
 		}
 
 	});
 
-	grunt.loadNpmTasks("grunt-contrib-concat");
-	grunt.loadNpmTasks("grunt-contrib-jshint");
+	grunt.loadNpmTasks("grunt-contrib-concat");	
 	grunt.loadNpmTasks("grunt-contrib-uglify");
+	grunt.loadNpmTasks('grunt-contrib-compass');  	
 	grunt.loadNpmTasks("grunt-contrib-watch");
 
-	grunt.registerTask("default", ["jshint", "concat", "uglify"]);
-	grunt.registerTask("travis", ["jshint"]);
+	grunt.registerTask("default", ["concat", "uglify", "compass"]);	
 
 };

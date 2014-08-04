@@ -1,18 +1,16 @@
 {
-	"name": "jquery-boilerplate",
-	"version": "3.3.4",
-	"homepage": "http://jqueryboilerplate.com",
+	"name": "reveal.js-picker",
+	"version": "1.0.0",
+	"homepage": "http://github.com/mdbrennan/reveal.js-picker",
 	"authors": [
-		"Zeno Rocha <hi@zenorocha.com>"
+		"https://github.com/mdbrennan "
 	],
-	"description": "A jump-start for jQuery plugins development.",
-	"main": "src/jquery.boilerplate.js",
+	"description": "A picker plugin for reveal.js",
+	"main": "src/reveal.js.picker.js",
 	"keywords": [
 		"jquery",
 		"plugin",
-		"boilerplate",
-		"jquery-plugin",
-		"jquery-boilerplate"
+		"reveal.js"
 	],
 	"license": "MIT"
 }
