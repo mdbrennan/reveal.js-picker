@@ -22,8 +22,8 @@
 
         init: function() {
 
-            console.log(this.element);
-            console.log(this.options);
+            //console.log(this.element);
+            //console.log(this.options);
             
             this.buildSelect(this.element,this.options);
 
@@ -32,7 +32,7 @@
 
         buildSelect: function(el, options) {
             // some logic
-            console.log(arguments);
+            //console.log(arguments);
 
             $("body").prepend('<div id="picker-modal"><div class="picker-cont"><select id="picker" style="width:80%"><option></option></select></div></div>');
 
@@ -40,7 +40,7 @@
             $.getJSON(options.slideList, function(data){
 
                 $.each(data.presentations, function(i, item){
-                    console.log(item.name, item.slides);
+                    //console.log(item.name, item.slides);
 
                     $("#picker").append('<option value="'+item.slides+'">'+item.name+'</option>');
                 })

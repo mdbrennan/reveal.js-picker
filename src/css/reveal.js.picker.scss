@@ -18,10 +18,12 @@
 		margin:40px auto;
 		font-family:helvetica, arial, sans-serif;
 
-		.select2-result{
-			font-family:helvetica, arial, sans-serif;			
-		}
+		
 	}	
+}
+
+.select2-drop{
+	font-family:helvetica, arial, sans-serif;			
 }
 
 @import "select2"
